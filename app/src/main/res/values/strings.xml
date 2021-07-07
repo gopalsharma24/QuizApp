@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Quizz</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="log_in">Log In</string>
+    <string name="hello_list_fragment" />
+    <string name="your_email">Your Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="sign_up_with_google">Sign Up with Google</string>
+    <string name="login">Login</string>
+    <string name="enter_your_login_details_ro_access_your_account">Enter your Login details to access your account</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="didn_t_have_account_signup">Didn\'t have account signup ?</string>
+    <string name="view_all">View All</string>
+    <string name="new_quiz">New Quiz</string>
+    <string name="title">Title</string>
+    <string name="signup">SignUp</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="enter_your_details_to_create_your_account">Enter your details to create your account</string>
+    <string name="sign_up">Sign Up</string>
+</resources>
