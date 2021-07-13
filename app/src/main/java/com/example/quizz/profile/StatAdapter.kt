@@ -1,19 +1,19 @@
-package com.example.quizz
+package com.example.quizz.profile
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.quizz.StatAdapter.*
+import com.example.quizz.R
+import com.example.quizz.profile.StatAdapter.*
 import kotlinx.android.synthetic.main.stat_list.view.*
 
-class StatAdapter(private val AllStats:ArrayList<StatData>): RecyclerView.Adapter<MyViewHolder>() {
-    class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
+class StatAdapter(private val AllStats: ArrayList<StatData>) :
+    RecyclerView.Adapter<MyViewHolder>() {
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind (stat: StatData)
-        {
-            itemView.stat_txt.text=stat.name
+        fun bind(stat: StatData) {
+            itemView.stat_txt.text = stat.name
             itemView.stat_image.setImageResource(stat.image)
         }
 
@@ -21,7 +21,7 @@ class StatAdapter(private val AllStats:ArrayList<StatData>): RecyclerView.Adapte
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater.inflate(R.layout.stat_list,parent,false)
+        val view = layoutInflater.inflate(R.layout.stat_list, parent, false)
         return MyViewHolder(view)
     }
 

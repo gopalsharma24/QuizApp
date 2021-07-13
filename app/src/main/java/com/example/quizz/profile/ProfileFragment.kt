@@ -1,22 +1,22 @@
-package com.example.quizz
+package com.example.quizz.profile
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import android.view.View
 import com.bumptech.glide.Glide
+import com.example.quizz.R
+import com.example.quizz.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_main2.*
-import kotlinx.android.synthetic.main.activity_profile.*
-import kotlinx.android.synthetic.main.quiz_mini.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 
-class ProfileActivity : AppCompatActivity() {
 
+
+class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private lateinit var mAuth: FirebaseAuth
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
 
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         mAuth = FirebaseAuth.getInstance()
         val currentUser=mAuth.currentUser
 
@@ -34,5 +34,14 @@ class ProfileActivity : AppCompatActivity() {
         val recyclerAdapter= StatAdapter(allStat)
         statView.adapter = recyclerAdapter
 
+
+        btnSignOut.setOnClickListener{
+            mAuth.signOut()
+            val intent = Intent(context, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
-}
+
+    }
+
+

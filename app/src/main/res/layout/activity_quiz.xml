@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".quiz.QuizActivity">
+
+
+    <TextView
+        android:id="@+id/question_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        tools:text="Who is the Prime Minister of India?" />
+
+    <LinearLayout
+        android:id="@+id/progressDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:indeterminate="false"
+            android:max="5"
+            android:minHeight="50dp"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/txtProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textSize="14sp"
+            tools:text="0/5" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/optionOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/option_item_bg"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:textColor="#7a8089"
+        android:textSize="18sp"
+        tools:text="option 1" />
+
+    <TextView
+        android:id="@+id/optionTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/option_item_bg"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:textColor="#7a8089"
+        android:textSize="18sp"
+        tools:text="option 2" />
+
+    <TextView
+        android:id="@+id/optionThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/option_item_bg"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:textColor="#7a8089"
+        android:textSize="18sp"
+        tools:text="option 3" />
+
+    <TextView
+        android:id="@+id/optionFour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/option_item_bg"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:textColor="#7a8089"
+        android:textSize="18sp"
+        tools:text="option 4" />
+
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Next"
+        android:textSize="18sp" />
+
+</LinearLayout>

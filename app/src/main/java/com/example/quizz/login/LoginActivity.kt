@@ -1,11 +1,14 @@
-package com.example.quizz
+package com.example.quizz.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
-import com.example.quizz.LoginActivity.Companion.RC_SIGN_IN
+import androidx.appcompat.app.AppCompatActivity
+import com.example.quizz.MainActivity2
+import com.example.quizz.R
+import com.example.quizz.fragments.MainFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -14,8 +17,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_login.*
 
+
 class LoginActivity : AppCompatActivity() {
-    companion object{
+    companion object {
         private const val RC_SIGN_IN = 12
     }
 
@@ -37,20 +41,21 @@ class LoginActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         firebaseAuth = FirebaseAuth.getInstance()
 
-        google_signin.setOnClickListener{
+        googleSignin.setOnClickListener {
             signIn()
         }
 
-        login_btn.setOnClickListener{
+        btnLogin.setOnClickListener {
             login()
         }
 
-        create_account.setOnClickListener {
-            val intent = Intent(this,SignUpActivity::class.java)
+        btnCreateAccount.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 
     }
+
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, LoginActivity.RC_SIGN_IN)
@@ -73,6 +78,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         mAuth.signInWithCredential(credential)
@@ -80,31 +86,33 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("LoginActivity", "signInWithCredential:success")
-                    val intent = Intent(this,ProfileActivity::class.java)
+                    val intent = Intent(this@LoginActivity, MainActivity2::class.java)
                     startActivity(intent)
+                    finish()
+
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("LoginActivity", "signInWithCredential:failure", task.exception)
                 }
             }
     }
-    private fun login(){
-        val email: String =edt_your_email.text.toString()
-        val psd: String = edt_your_password.text.toString()
 
-        if (email.isEmpty() || psd.isEmpty())
-        {
-            Toast.makeText(this,"Enter Details",Toast.LENGTH_LONG).show()
+    private fun login() {
+        val email: String = edtYourEmail.text.toString()
+        val psd: String = edtYourPassword.text.toString()
+
+        if (email.isEmpty() || psd.isEmpty()) {
+            Toast.makeText(this, "Enter Details", Toast.LENGTH_LONG).show()
             return
         }
 
-        firebaseAuth.signInWithEmailAndPassword(email,psd).addOnCompleteListener(this){
-            if (it.isSuccessful){
-                val intent = Intent(this,MainActivity2::class.java)
+        firebaseAuth.signInWithEmailAndPassword(email, psd).addOnCompleteListener(this) {
+            if (it.isSuccessful) {
+                val intent = Intent(this@LoginActivity, MainActivity2::class.java)
                 startActivity(intent)
-            }
-            else{
-                Toast.makeText(this,"User not Found",Toast.LENGTH_SHORT).show()
+                finish()
+            } else {
+                Toast.makeText(this, "User not Found", Toast.LENGTH_SHORT).show()
             }
         }
     }

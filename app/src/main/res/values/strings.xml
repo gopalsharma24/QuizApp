@@ -17,4 +17,14 @@
     <string name="title_activity_maps">Map</string>
     <string name="enter_your_details_to_create_your_account">Enter your details to create your account</string>
     <string name="sign_up">Sign Up</string>
+    <string name="sign_in_with_google">Sign In with google</string>
+    <string name="or">OR</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_out">sign out</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="profile">Profile</string>
+    <string name="quiz">Quiz</string>
+    <string name="home">Home</string>
 </resources>
