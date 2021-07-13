@@ -63,29 +63,34 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:id="@+id/btn_facebook"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginLeft="2dp"
+            android:scaleType="center"
             android:background="@color/purple_700"
-            android:src="@drawable/facebookb" />
+            android:src="@drawable/facebook1" />
         <ImageButton
-            android:layout_width="100dp"
+            android:id="@+id/btn_mail"
+            android:layout_width="80dp"
             android:layout_marginLeft="2dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:background="@color/teal_700"
-            android:src="@drawable/mailb" />
+            android:src="@drawable/mail1" />
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:id="@+id/btn_twitter"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginLeft="2dp"
             android:background="@color/teal_200"
-            android:src="@drawable/twitterb" />
+            android:src="@drawable/twitter1" />
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:id="@+id/btn_instagram"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginLeft="2dp"
             android:background="@color/purple_500"
-            android:src="@drawable/instab" />
+            android:src="@drawable/insta1" />
     </LinearLayout>
 
 

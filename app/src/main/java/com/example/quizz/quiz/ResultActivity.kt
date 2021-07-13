@@ -21,5 +21,23 @@ class ResultActivity : AppCompatActivity() {
             startActivity(Intent(this,MainActivity2::class.java))
             finish()
         }
+        btn_facebook.setOnClickListener{
+            val intent = packageManager.getLaunchIntentForPackage("com.facebook.katana")
+            startActivity(intent)
+        }
+        btn_mail.setOnClickListener{
+            val intent = packageManager.getLaunchIntentForPackage("com.google.android.gm")
+            startActivity(intent)
+
+
+        }
+        btn_twitter.setOnClickListener{
+            val intent = packageManager.getLaunchIntentForPackage("com.twitter.android")
+            startActivity(intent)
+        }
+        btn_instagram.setOnClickListener{
+            val intent = packageManager.getLaunchIntentForPackage("com.instagram.android")
+            startActivity(intent)
+        }
     }
 }
